@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import fzyz_net
+from . import jk
 
 urlpatterns = [
     path('fzyz_net/', fzyz_net.send),
+    path('jk/', jk.send)
 ]
