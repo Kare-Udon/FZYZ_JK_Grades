@@ -4,44 +4,47 @@ import urllib.request
 import http.cookiejar
 from django.http import HttpResponse
 import json
+import requests
+
 
 def send(request):
+    #从前端获取数据
     request.encoding='utf-8'
-        user= request.GET.get('user')
-        passwd = request.GET.get('passwd')
-         #登录时需要POST的数据
-        data = json.dumps({
+    user= request.GET.get('user')
+    passwd = request.GET.get('passwd')
+ 
+    ##获取Authorization
+     #登录时需要POST的数据
+    data = {
           'loginName' : str(user) ,
           'password' : str(passwd)
-        }, sort_keys=True, indent=4) 
+    }
+    #定义认证
+    Autho = 'Bearer'
+    #设置请求头
+    headers = {
+        'Client-Value': '22' ,
+        'Connection': 'keep-alive',
+        'Authorization' : Autho ,
+        'Content-Type': 'application/json',
+        'Host': 'api.fclassroom.com',
+        'User-agent': 'User-Agent: ji ke tong xue/4.1.4 (iPhone; iOS 13.3.1; Scale/2.00)'
+        }
+    #登录时表单提交到的地址（用开发者工具可以看到）
+    login_url = 'https://api.fclassroom.com/pf-account-family/api/account/student/old/login'
+    #设置cookie容器
+    cookie = http.cookiejar.CookieJar()
+    #发送POST请求
+    response = requests.post(url=login_url, headers=headers, data=json.dumps(data), cookies=cookie)
+    # 保存获取到的含有autho的json
+    print(response.json())
 
-        post_data = urllib.parse.urlencode(data).encode('utf-8')
-
-        #设置请求头
-        headers = {'User-agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'}
-        #登录时表单提交到的地址（用开发者工具可以看到）
-        login_url = 'http://fzyz.net/sys/login.shtml'
-        #构造登录请求
-        req = urllib.request.Request(login_url, headers = headers, data = post_data)
-        #构造cookie
-        cookie = http.cookiejar.CookieJar()
-        #由cookie构造opener
-        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))
-        #发送登录请求，此后这个opener就携带了cookie，以证明自己登录过
-        resp = opener.open(req)
-        #登录后才能访问的网页
-        url_score = 'http://fzyz.net/doone-edu/family/familyinfo/loadStuRScoreAction.shtml'
-
-        #查询成绩所POST的数据
-        data_score = { 
-                                        'academic_Year': '2019-2020',
-                                        'termYear': '1',
-                                        'exam_Id': '3703',
-                                        'myscoreconfig': '0',
-                                        }
-        post_data_score = urllib.parse.urlencode(data_score).encode('utf-8')
-        #构造访问请求
-        req = urllib.request.Request(url_score, headers = headers, data = post_data_score)
-        resp = opener.open(req)
-        get_html = resp.read().decode('gbk')
+'''
+    #获取成绩json
+    url_score = 'https://api.fclassroom.com/ud-family/api/report/student/exam/detail?schoolId=2246&gradeId=9320&subjectBaseId=5&clzssId=102301&studentId=1814919&examId=735115&paperId=814772&clientValue=22'
+    post_data_score = urllib.parse.urlencode(data_score).encode('utf-8')
+    #构造访问请求
+    req = urllib.request.Request(url_score, headers = headers, data = post_data_score)
+    resp = opener.open(req)
+    get_html = resp.read().decode('gbk')
 '''
