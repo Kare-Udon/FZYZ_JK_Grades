@@ -8,9 +8,13 @@
 
 需要安装的库：
 
-Python3 ： 略；
+Python3,pip3 ： 略；
 
-`pip3 install Django,beautifulsoup4  `
+`pip3 install Django beautifulsoup4 requests  ` 
+
+开启Server ：
+
+`python3 manage.py runserver 0.0.0.0:8000`
 
 ## API参数
 
@@ -19,6 +23,8 @@ Python3 ： 略；
 用户名 ： 'user':'username',
 
 密码 ： 'passwd':'password'
+
+考试id ： 'exam':'exam_Id'
 
 ### JK/
 
