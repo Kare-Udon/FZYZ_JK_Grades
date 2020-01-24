@@ -14,6 +14,7 @@ def send(request):
         request.encoding='utf-8'
         user = request.GET.get('user')
         passwd = request.GET.get('passwd')
+        exam = request.GET.get('exam')
         
         ##获取登陆Cookies
         #登录时需要POST的数据
@@ -44,7 +45,7 @@ def send(request):
         data_score = { 
                                         'academic_Year': '2019-2020',
                                         'termYear': '1',
-                                        'exam_Id': '3703',
+                                        'exam_Id': exam,
                                         'myscoreconfig': '0',
                                         }
         post_data_score = urllib.parse.urlencode(data_score).encode('utf-8')

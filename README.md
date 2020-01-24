@@ -6,15 +6,21 @@
 
 ## 部署教程
 
+### 部署开发/测试环境
+
 需要安装的库：
 
 Python3,pip3 ： 略；
 
 `pip3 install Django beautifulsoup4 requests  ` 
 
-开启Server ：
+开启测试Server ：
 
 `python3 manage.py runserver 0.0.0.0:8000`
+
+### 部署生产环境
+
+[参见runoob](https://www.runoob.com/django/django-nginx-uwsgi.html)
 
 ## API参数
 
