@@ -4,9 +4,27 @@
         FZYZ成绩查询
     </title>
     <form action="http://127.0.0.1:8000/jk" method="GET">
-        JK同学账号 : <input type="text" name="user"><br>
-        JK同学密码 : <input type="password" name="passwd"><br>
+        <p>JK同学账号 : <input type="text" name="user"></p>
+        <p>JK同学密码 : <input type="password" name="passwd"></p>
+        <p>查询科目：</p>
+        <p>
+        <input type="radio" name="subject" value="1">数学
+        <input type="radio" name="subject" value="2">语文
+        <input type="radio" name="subject" value="3">英语<br>
+        <input type="radio" name="subject" value="4">物理
+        <input type="radio" name="subject" value="5">化学
+        <input type="radio" name="subject" value="6">生物<br>
+        <input type="radio" name="subject" value="7">政治
+        <input type="radio" name="subject" value="8">历史
+        <input type="radio" name="subject" value="9">地理<br>
+        <input type="radio" name="subject" value="10">信息技术
+        <input type="radio" name="subject" value="11">理综
+        <input type="radio" name="subject" value="12">文综
+        </p>
         <input type="submit">
     </form>
-    <p>预览版网页。会跳转其他页面。更多功能添加中。</p>
+    <p>预览版网页。会跳转其他页面，返回的数据该科目全部考试成绩及为未加处理的json。</p>
+    <p>赶着写出来了，还没有去分析json（很麻烦），教一下怎么看。</p>
+    <p>考试名："examName"；总分："examScore"；均分："gradeAvgScore"；得分："score"。</p>
+    <p>（若是顺利）很快会把json的分析写出来的。</p>
 </head>

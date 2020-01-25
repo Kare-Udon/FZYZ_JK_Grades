@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <head>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"> </script>
     <title>
         FZYZ成绩查询
     </title>
+</head>
+<body>
     <form action="http://127.0.0.1:8000/fzyz_net" method="GET">
-        校园网账号 : <input type="text" name="user"><br>
-        校园网密码 : <input type="password" name="passwd"><br>
+        <p>校园网账号 : <input type="text" name="user"></p>
+        <p>校园网密码 : <input type="password" name="passwd"></p>
         2019-2020学年,第一学期：<br>
         <input type="radio" name="exam" value="3704">第二学段期末考试总评<br>
         <input type="radio" name="exam" value="3703">第二学段期末考试卷面<br>
         <input type="submit">
     </form>
     <p>预览版网页。会跳转其他页面。更多功能添加中。</p>
-</head>
+</body>
 <!-- 高一/二/三总评3704,卷面3703-->
