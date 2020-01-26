@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
         FZYZ官网成绩查询
     </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>FZYZ官网成绩查询</h1>
-    <form action="http://127.0.0.1:8000/fzyz_net" method="GET">
-        <p>校园网账号 : <input type="text" name="user"></p>
-        <p>校园网密码 : <input type="password" name="passwd"></p>
-        2019-2020学年,第一学期：<br>
-        <input type="radio" name="exam" value="3704">第二学段期末考试总评<br>
-        <input type="radio" name="exam" value="3703">第二学段期末考试卷面<br>
-        <input type="submit">
-    </form>
-    <p>预览版网页。会跳转其他页面。更多功能添加中。</p>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-center">
+				FZYZ官网成绩查询
+			</h3>
+			<ul class="nav nav-tabs">
+				<li>
+					 <a href="https://127.0.0.1/index.html">首页</a>
+				</li>
+				<li class="active">
+					 <a href="#">FZYZ官网成绩查询</a>
+				</li>
+				<li>
+					 <a href="https://127.0.0.1/jk.html">JK同学APP成绩查询</a>
+				</li>
+			</ul>
+			<form role="form" action="http://127.0.0.1:8000/fzyz_net">
+				<div class="form-group">
+					 <label for="username">FZYZ官网用户名</label>
+                     <input type="username" class="form-control" name="user" />
+				</div>
+				<div class="form-group">
+					 <label for="password">FZYZ官网密码</label>
+                     <input type="password" class="form-control" name="passwd" />
+				</div>
+                <div class="radio">
+                    <label>
+                        <label class="radio-inline">
+                            <input type="radio" name="exam" value="3704" checked> 第二学段期末考试总评成绩
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="exam"  value="3703"> 第二学段期末考试卷面成绩
+                    </label>
+                </div>
+	            <button type="submit" class="btn btn-default">提交查询</button>
+			</form>
+		</div>
+	</div>
+</div>
 </body>
-<!-- 高一/二/三总评3704,卷面3703-->
