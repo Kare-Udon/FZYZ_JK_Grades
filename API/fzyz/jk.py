@@ -77,11 +77,11 @@ def send(request):
     # 成绩查询地址构建
     school_id = '2246'  # 可拓展项
     url_score = (f'https://api.fclassroom.com/ud-api-student/api/v1/exam/list'
-                 '?examSubjectValue={subject}'
-                 '&offset=1'
-                 '&pageSize=999'
-                 '&schoolId={school_id}'
-                 '&studentId={studentId}')
+                 f'?examSubjectValue={subject}'
+                 f'&offset=1'
+                 f'&pageSize=999'
+                 f'&schoolId={school_id}'
+                 f'&studentId={studentId}')
     # 构建成绩查询头
     headers_score = headers_studentId
     # 构造访问请求
