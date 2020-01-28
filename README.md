@@ -2,55 +2,76 @@
 
 ## 项目介绍
 
-用于查询FZYZ官网成绩及APP“JK同学”内成绩的API及前端网站。
+用于查询 FZYZ 官网成绩和 APP“JK同学” 内成绩的 API 及前端网站。
 
 ## 部署教程
 
 ### 部署开发/测试环境
 
-需要安装的库：
+运行环境：`Python3`
 
-Python3,pip3 ： 略；
+安装依赖库：
 
-`pip3 install Django beautifulsoup4 requests  ` 
+```shell
+pip3 install -U -r requirements.txt
+```
 
 开启测试Server ：
-
-`python3 manage.py runserver 0.0.0.0:8000`
+```shell
+python3 manage.py runserver 0.0.0.0:8000
+```
 
 ### 部署生产环境
 
-[参见runoob](https://www.runoob.com/django/django-nginx-uwsgi.html)
+[参见 runoob](https://www.runoob.com/django/django-nginx-uwsgi.html)
 
 ## API参数
 
-### fzyz/
+### `fzyz/`
+|键       |值     |
+|-        |-      |
+|'user'   |用户名 |
+|'passwd' |密码   |
+|'exam'   |考试id |
 
-用户名 ： 'user':'username',
+*注：学科id对照表如下：*
 
-密码 ： 'passwd':'password',
 
-考试id ： 'exam':'exam_Id';
+|考试（高中） |id|
+|-            |- |
+|总评         |3704|
+|总评         |3703|
 
-高一/二/三总评3704,卷面3703
+### `JK/`
 
-### JK/
+|键         |值     |
+|-          |-      |
+|'user'     |用户名 |
+|'passwd'   |密码   |
+|'subject'  |学科id |
 
-用户名 ： 'user':'username',
+*注：学科id对照表如下：*
 
-密码 ： 'passwd':'password',
-
-学科id ： ‘subject’:'subject';
-
-数学1；语文2；英语3；物理4；化学5；生物6；政治7；历史8；地理9；信息技术10；理综11；文综12。
+|学科|id|
+|-   |- |
+|数学|1 |
+|语文|2 |
+|英语|3 |
+|物理|4 |
+|化学|5 |
+|生物|6 |
+|政治|7 |
+|历史|8 |
+|地理|9 |
+|信息|10|
+|理综|11|
+|文综|12|
 
 ## 已知问题
 
-FZYZ官网查询返回的是未经解析的HTML；
-
-需要打开新的页面；
-
-跨域问题。
+- [ ] FZYZ官网查询返回的是未经解析的HTML；
+- [ ] 需要打开新的页面；
+- [ ] 跨域问题。
 
 ## TO DO LIST
 
@@ -62,12 +83,12 @@ FZYZ官网查询返回的是未经解析的HTML；
 
 ## 我们需要？
 
-能构建Ajax前端的人（需要jQery等JS基础）；
+1.  能构建Ajax前端的人（需要jQery等JS基础）
 
-能设计美丽前端的人（需要框架基础）；
+2.  能设计美丽前端的人（需要框架基础）
 
-能补全API查询范围的人（希望高一/高二有兴趣的同学能提供开发所需要的数据）；
+3.  能补全API查询范围的人（希望高一/高二有兴趣的同学能提供开发所需要的数据）
 
-发现任何问题后开issue反馈的人；
+4.  发现任何问题后开issue反馈的人
 
-有兴趣提交任何代码的人。
+5.  有兴趣提交任何代码的人

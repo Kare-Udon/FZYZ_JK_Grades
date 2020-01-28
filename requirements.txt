@@ -1,0 +1,3 @@
+ Django
+ beautifulsoup4
+ requests
