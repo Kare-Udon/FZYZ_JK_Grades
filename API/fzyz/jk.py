@@ -90,13 +90,33 @@ def send(request):
                             cookies=cookie)
     # 保存成绩json
     json_score = response.json()
-    # 格式化json
-    str_score = json.dumps(json_score,
-                           ensure_ascii=False,
-                           sort_keys=True,
-                           indent=2)
-    # 暂时直接输出json
-    return HttpResponse(str_score)
+    # 提取获取json中的data块
+    str_score = json.dumps(json_score)
+    str_score_load = json.loads(str_score)
+    json_score = str_score_load['data']
+    # 提取所需数据，构建返回json
+
+    #json_back = {
+    #                "examName": str(json_score[0]['examName']),
+    #                "score": str(json_score[0]['score']),
+    #                "clzssAvgScore": str(json_score[0]['clzssAvgScore']),
+    #                "gradeAvgScore": str(json_score[0]['gradeAvgScore'])
+    #            }
+    examName = str(json_score[0]['examName'])
+    score = str(json_score[0]['score'])
+    clzssAvgScore = str(json_score[0]['clzssAvgScore'])
+    gradeAvgScore = str(json_score[0]['gradeAvgScore'])
+    #构建返回的html
+    html_back = (f'<!DOCTYPE html>'
+                 f'<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></head>'
+                 f'<body><div class="container"><div class="row clearfix"><div class="col-md-12 column"></div><table class="table">'
+                 f'<tr><td>考试名称</td><td>考试成绩</td><td>班级均分</td><td>年段均分</td></tr>'
+                 f'<tr><td>{examName}</td><td>{score}</td><td>{clzssAvgScore}</td><td>{gradeAvgScore}</td></tr>'
+                 f'</table></dev></dev></dev></body>'
+    )
+
+    #return HttpResponse(json.dumps(json_back, ensure_ascii=False))
+    return HttpResponse(html_back)
 
 
 # '''
