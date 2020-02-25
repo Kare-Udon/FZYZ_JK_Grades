@@ -4,6 +4,16 @@
 
 用于查询 FZYZ 官网成绩和 APP“JK同学” 内成绩的 API 及前端网站。
 
+## Demo
+
+### Demo站点
+
+[Lao_Liu搭建的查询站点](https://grade.laoliu.eu.org)
+
+### Demo API
+
+https://api.laoliu.eu.org:4438
+
 ## 部署教程
 
 ### 部署开发/测试环境
@@ -84,11 +94,13 @@ python3 manage.py runserver 0.0.0.0:8000
 ## 我们需要？
 
 1.  能构建Ajax前端的人（需要jQery等JS基础）
-
 2.  能设计美丽前端的人（需要框架基础）
-
 3.  能补全API查询范围的人（希望高一/高二有兴趣的同学能提供开发所需要的数据）
-
 4.  发现任何问题后开issue反馈的人
-
 5.  有兴趣提交任何代码的人
+
+## 特别感谢
+
+感谢[@mnihyc](https://github.com/mnihyc)提供的Demo API服务器！
+
+感谢[@Googleplex](https://github.com/y-young) [@jerryc05](https://github.com/jerryc05)等为本项目提出建议！
