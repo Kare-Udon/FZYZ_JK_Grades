@@ -18,8 +18,8 @@ def send(request):
     request.encoding = 'utf-8'
     user = request.GET.get('user')
     passwd = request.GET.get('passwd')
-    para_academic_Year = request.GET.get('para.academic_Year')
-    para_KEY = request.GET.get('para.KEY')
+    para_academic_Year = request.GET.get('para_academic_Year')
+    para_KEY = request.GET.get('para_KEY')
 
     # 获取登陆Cookies
     # 登录时需要POST的数据
@@ -47,7 +47,7 @@ def send(request):
     # 发送登录请求，此后这个opener就携带了cookie，以证明自己登录过
     resp = opener.open(req)
 
-    ##获取考试详情json
+    # 获取考试详情json
     # 考试详情查询界面
     exam_url = (f'http://fzyz.net/education/score/score/getstuExamsByAcademicYearTermYears.shtml'
                 f'?para.academic_Year={para_academic_Year}'
@@ -56,6 +56,6 @@ def send(request):
     req = urllib.request.Request(exam_url,
                                  headers=headers)
     resp = opener.open(req)
-#    json_exam = resp.read()
+    exam_js = resp.read()
     # 返回json
-    return HttpResponse(json_exam)
+    return HttpResponse(exam_js)
