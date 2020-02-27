@@ -10,7 +10,7 @@ import requests
 
 
 # 改变标准输出的默认编码
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')
+sys.stdout.reconfigure(encoding='utf-8')
 
 
 def send(request):
