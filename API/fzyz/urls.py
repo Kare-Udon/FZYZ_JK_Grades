@@ -21,6 +21,6 @@ from . import jk
 
 urlpatterns = [
     path('fzyz_net/', fzyz_net.send),
-	path('fzyz_net/', fzyz_net_exam.send),
+	path('fzyz_net_exam/', fzyz_net_exam.send),
     path('jk/', jk.send)
 ]

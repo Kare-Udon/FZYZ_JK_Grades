@@ -60,7 +60,7 @@ def send(request):
     exam_js = resp.read()
     print(exam_js)
     exam_js = json.loads(exam_js)
-    peint(exam_js)
+    print(exam_js)
     exam_jsp = (f'{jsonpcallback}('
                 f'{exam_js})'
     )
