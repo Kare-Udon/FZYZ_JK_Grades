@@ -57,7 +57,7 @@ def send(request):
     req = urllib.request.Request(exam_url,
                                  headers=headers)
     resp = opener.open(req)
-    exam_js = resp.read()
+    exam_js = resp.read().decode('gbk')
     print(exam_js)
     exam_js = json.loads(exam_js)
     print(exam_js)
