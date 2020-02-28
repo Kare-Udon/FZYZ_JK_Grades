@@ -1,51 +1,96 @@
 <!DOCTYPE html>
+
 <head>
-    <title>
-        FZYZ官网成绩查询
-    </title>
+	<title>
+		FZYZ官网成绩查询
+	</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./fzyz_net_ajax.js" type="text/javascript"></script>
 </head>
+
 <body>
-<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<h3 class="text-center">
-				FZYZ官网成绩查询
-			</h3>
-			<ul class="nav nav-tabs">
-				<li>
-					 <a href="https://127.0.0.1/index.html">首页</a>
-				</li>
-				<li class="active">
-					 <a href="#">FZYZ官网成绩查询</a>
-				</li>
-				<li>
-					 <a href="https://127.0.0.1/jk.html">JK同学APP成绩查询</a>
-				</li>
-			</ul>
-			<form role="form" action="http://127.0.0.1:8000/fzyz_net">
-				<div class="form-group">
-					 <label for="username">FZYZ官网用户名</label>
-                     <input type="username" class="form-control" name="user" />
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3 class="text-center">
+					FZYZ官网成绩查询
+				</h3>
+
+				<ul class="nav nav-tabs">
+					<li>
+						<a href="https://127.0.0.1/index.html">首页</a>
+					</li>
+					<li class="active">
+						<a href="#">FZYZ官网成绩查询</a>
+					</li>
+					<li>
+						<a href="https://127.0.0.1/jk.html">JK同学APP成绩查询</a>
+					</li>
+				</ul>
+				</br>
+				<div>
+					<form id='form' role="form" action="">
+						<div class="form-group">
+							<label for="username">FZYZ官网用户名</label>
+							<input type="username" class="form-control" name="user" />
+						</div>
+						<div class="form-group">
+							<label for="password">FZYZ官网密码</label>
+							<input type="password" class="form-control" name="passwd" />
+						</div>
+
+						<!--
+						<div class="radio">
+			                    <label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="exam" value="3704" checked> 第二学段期末考试总评成绩
+			                        </label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="exam"  value="3703"> 第二学段期末考试卷面成绩
+			                    </label>
+							</div>
+					-->
+
+						<div>
+							<h5>考试详情查询</h5>
+							<!--http://fzyz.net/education/score/score/getstuExamsByAcademicYearTermYears.shtml?para.academic_Year=2019-2020&para.KEY=1-->
+							<div>
+								<select name='para_academic_Year'>
+									<option id='year1' value=""> </option>
+									<option id='year2' value=""> </option>
+									<option id='year3' value=""> </option>
+								</select>
+
+								<script>
+									var date = new Date();
+									year = date.getFullYear();
+									document.getElementById('year1').innerHTML = (year - 1) + '-' + year;
+									document.getElementById('year2').innerHTML = (year - 2) + '-' + (year - 1);
+									document.getElementById('year3').innerHTML = (year - 3) + '-' + (year - 2);
+									document.getElementById('year1').value = (year - 1) + '-' + year;
+									document.getElementById('year2').value = (year - 2) + '-' + (year - 1);
+									document.getElementById('year3').value = (year - 3) + '-' + (year - 2);
+								</script>
+							</div>
+
+							<div>
+								<label>
+									<label class="radio-inline">
+										<input type="radio" name="para_KEY" value="1" checked> 第一学期
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="para_KEY" value="2"> 第二学期
+									</label>
+							</div>
+							<input id="btn" type="button" value="跨域获取数据" />
+							<!--<button type="submit" class="btn btn-default">查询考试详情</button>-->
+						</div>
+					</form>
 				</div>
-				<div class="form-group">
-					 <label for="password">FZYZ官网密码</label>
-                     <input type="password" class="form-control" name="passwd" />
-				</div>
-                <div class="radio">
-                    <label>
-                        <label class="radio-inline">
-                            <input type="radio" name="exam" value="3704" checked> 第二学段期末考试总评成绩
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="exam"  value="3703"> 第二学段期末考试卷面成绩
-                    </label>
-                </div>
-	            <button type="submit" class="btn btn-default">提交查询</button>
-			</form>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
