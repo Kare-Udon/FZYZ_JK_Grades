@@ -20,7 +20,6 @@ def send(request):
     passwd = request.GET.get('passwd')
     para_academic_Year = request.GET.get('para_academic_Year')
     para_KEY = request.GET.get('para_KEY')
-    jsonpcallback = request.GET.get('jsonpcallback')
 
     # 获取登陆Cookies
     # 登录时需要POST的数据
@@ -58,11 +57,13 @@ def send(request):
                                  headers=headers)
     resp = opener.open(req)
     exam_js = resp.read().decode('gbk')
+    exam_js = json.dumps(json.loads(exam_js)[0])
     print(exam_js)
-    exam_js = json.loads(exam_js)
-    print(exam_js)
-    exam_jsp = (f'{jsonpcallback}('
-                f'{exam_js})'
-    )
+
     # 返回json
-    return HttpResponse(exam_jsp)
+    response = HttpResponse(exam_js)
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
+    return response
