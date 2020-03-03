@@ -57,8 +57,9 @@ def send(request):
                                  headers=headers)
     resp = opener.open(req)
     exam_js = resp.read().decode('gbk')
-    exam_js = json.dumps(json.loads(exam_js)[0])
-    print(exam_js)
+#    exam_js = json.dumps(json.loads(exam_js))
+
+    exam_js = '{"data":' + exam_js + "}"
 
     # 返回json
     response = HttpResponse(exam_js)
