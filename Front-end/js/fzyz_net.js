@@ -19,13 +19,14 @@ $(document).ready(function () {
             success: function (data) { //【成功回调】
                 console.log("success");
                 json = eval(data.data);
-                for (var i=0 ; i<json.length ; i++ ) {
-                    $('#select2').append("<option value='"+json[i].KEY+"'>"+json[i].TEXT+"</option>");
+                for (var i = 0; i < json.length; i++) {
+                    $('#select2').append("<option value='" + json[i].KEY + "'>" + json[i].TEXT + "</option>");
                 };
             },
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
-                //document.getElementById("panel2").class("panel panel-danger")
+                $("#panel1_inside").attr("class","panel panel-danger");
+                document.getElementById("panel2").style.display = "none";
             }
         });
     });
@@ -42,23 +43,24 @@ $(document).ready(function () {
                 $("#tbody1").append(data);
                 document.querySelectorAll('tr').forEach(
                     tr => [
-                      "width", "height", "class", "bgcolor", "align"
+                        "width", "height", "class", "bgcolor", "align"
                     ].forEach(
-                      attr => tr.removeAttribute(attr)
+                        attr => tr.removeAttribute(attr)
                     )
-                  );
+                );
                 document.querySelectorAll('td').forEach(
                     td => [
-                      "width", "height", "class", "bgcolor", "align"
+                        "width", "height", "class", "bgcolor", "align"
                     ].forEach(
-                      attr => td.removeAttribute(attr)
+                        attr => td.removeAttribute(attr)
                     )
-                  );
+                );
                 $("#table1 tr").eq(0).remove();
                 $("#table1 tr").eq(-1).remove();
             },
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
+                $("#panel2_inside").attr("class","panel panel-danger");
             }
         });
     });

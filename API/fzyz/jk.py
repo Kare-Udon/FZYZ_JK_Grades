@@ -7,6 +7,7 @@ import http.cookiejar
 from django.http import HttpResponse
 import json
 import requests
+import re
 
 
 def send(request):
@@ -106,39 +107,16 @@ def send(request):
     score = str(json_score[0]['score'])
     clzssAvgScore = str(json_score[0]['clzssAvgScore'])
     gradeAvgScore = str(json_score[0]['gradeAvgScore'])
+
     #构建返回的html
-    html_back = (f'<!DOCTYPE html>'
-                 f'<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></head>'
-                 f'<body><div class="container"><div class="row clearfix"><div class="col-md-12 column"></div><table class="table">'
-                 f'<tr><td>考试名称</td><td>考试成绩</td><td>班级均分</td><td>年段均分</td></tr>'
-                 f'<tr><td>{examName}</td><td>{score}</td><td>{clzssAvgScore}</td><td>{gradeAvgScore}</td></tr>'
-                 f'</table></dev></dev></dev></body>'
-    )
+    html_back = (f'<table class="table">'
+                 f'<thead><th>考试名称</th><th>考试成绩</th><th>班级均分</th><th>年段均分</th></thead>'
+                 f'<tr><th>{examName}</th><th>{score}</th><th>{clzssAvgScore}</th><th>{gradeAvgScore}</th></tr>'
+                 f'</table><br />')
 
-    #return HttpResponse(json.dumps(json_back, ensure_ascii=False))
-    return HttpResponse(html_back)
-
-
-# '''
-#     ##获取成绩json
-#     #成绩查询地址
-#     url_score = 'https://api.fclassroom.com/ud-family/api/report/student/exam/detail?schoolId=2246&gradeId=9320&subjectBaseId=5&clzssId=102301&studentId=1814919&examId=735115&paperId=814772&clientValue=22'
-#     #构建成绩查询头
-#     headers_score = {
-#         'Client-Value': '22' ,
-#         'Connection': 'keep-alive',
-#         'Authorization' : Autho ,
-#         'Content-Type': 'application/json',
-#         'Host': 'api.fclassroom.com',
-#         'User-agent': 'User-Agent: ji ke tong xue/4.1.4 (iPhone; iOS 13.3.1; Scale/2.00)'
-#      }
-#     #构造访问请求
-#     response = requests.get(url=url_score, headers=headers_score, cookies=cookie)
-#     #保存成绩json
-#     json_score = response.json()
-#     #确保输出为中文
-#     str_score = json.dumps(json_score, ensure_ascii=False)
-
-#     ##返回成绩数据（暂为为处理的json）
-#     return HttpResponse(str_score)
-# '''
+    response = HttpResponse(html_back)
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "100000"
+    response["Access-Control-Allow-Headers"] = "*"
+    return response

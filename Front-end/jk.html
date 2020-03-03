@@ -2,23 +2,24 @@
 
 <head>
     <title>
-        JK同学APP成绩查询
+        JK 同学 APP 成绩查询
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./js/jk.js" type="text/javascript"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <div class="page-header">
-                    <h3 class="text-center">
-                        JK同学APP成绩查询
-                    </h3>
-                </div>
+        <div class="col-md-12 column">
+            <div class="page-header">
+                <h3 class="text-center">
+                    JK同学APP成绩查询
+                </h3>
+            </div>
+            <div class="row align-items-centerjustify-content-center login-center">
                 <ul class="nav nav-tabs">
                     <li>
                         <a href="https://127.0.0.1/index.html">首页</a>
@@ -30,74 +31,142 @@
                         <a href="#">JK同学APP成绩查询</a>
                     </li>
                 </ul>
-                <form role="form" action="http://127.0.0.1:8000/jk">
-                    <div class="form-group">
-                        <label for="username">JK同学账号</label>
-                        <input type="username" class="form-control" name="user" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">JK同学密码</label>
-                        <input type="password" class="form-control" name="passwd" />
-                    </div>
-                    <div class="radio">
-                        <p>
-                            <label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="1" checked> 数学
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="2"> 语文
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="3"> 英语
-                                </label>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="4"> 物理
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="5"> 化学
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="6"> 生物
-                                </label>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="7"> 政治
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="8"> 历史
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="9"> 地理
-                                </label>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="10"> 信息技术
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="11"> 理综
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="subject" value="12"> 文综
-                                </label>
-                            </label>
-                        </p>
-                    </div>
-                    <button type="submit" class="btn btn-default">提交查询</button>
+            </div>
+            <br />
+        </div>
+        <div class="row">
+            <div class="col-md-6">
 
-                    <p id="score"></p>
+                <form id='form' role="form" action="">
+                    <div id="panel1" class="panel panel-primary">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                JK 同学登录信息
+                            </h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <div class="form-group">
+                                <label for="username">JK 同学账号</label>
+                                <input type="username" class="form-control" name="user" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">JK 同学密码</label>
+                                <input type="password" class="form-control" name="passwd" />
+                            </div>
+
+                            <button type="button" class="btn btn-primary" id="next1">下一步</button>
+
+                        </div>
+                    </div>
+
+                    <div id="panel2" style="display: none;">
+                        <div id="panel2_inside" class="panel panel-primary">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    查询科目选择
+                                </h3>
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="radio">
+
+                                    <table class="table">
+                                        <thead>
+                                            <th>基础学科</th>
+                                            <th> 理科 </th>
+                                            <th> 文科 </th>
+                                            <th>综合/其它</th>
+                                        </thead>
+
+                                        <tr>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="1" checked> 数学
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="4"> 物理
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="7"> 政治
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="10"> 信息技术
+                                                </label>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="2"> 语文
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="5"> 化学
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="8"> 历史
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="11"> 理综
+                                                </label>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="3"> 英语
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="6"> 生物
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="9"> 地理
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="subject" value="12"> 文综
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                                <input class="btn btn-primary" id="submit" type="button" value="提交查询" />
+                            </div>
+                        </div>
+
+                        <p id="score"></p>
+                    </div>
                 </form>
             </div>
+            <div class="col-md-6">
+                <div id="table1">
+
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
