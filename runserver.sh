@@ -1,0 +1,1 @@
+uwsgi --master --http 0.0.0.0:8000 --chdir ./API/ --module fzyz.wsgi

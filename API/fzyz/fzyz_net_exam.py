@@ -4,11 +4,21 @@ import sys
 import io
 import urllib.request
 import http.cookiejar
+<<<<<<< HEAD
 from bs4 import BeautifulSoup
 from django.http import HttpResponse
 
 # 改变标准输出的默认编码
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')
+=======
+from django.http import HttpResponse
+import json
+import requests
+
+
+# 改变标准输出的默认编码
+sys.stdout.reconfigure(encoding='utf-8')
+>>>>>>> dev
 
 
 def send(request):
@@ -16,8 +26,13 @@ def send(request):
     request.encoding = 'utf-8'
     user = request.GET.get('user')
     passwd = request.GET.get('passwd')
+<<<<<<< HEAD
     para_academic_Year = request.GET.get('para.academic_Year')
     para_KEY = request.GET.get('para.KEY')
+=======
+    para_academic_Year = request.GET.get('para_academic_Year')
+    para_KEY = request.GET.get('para_KEY')
+>>>>>>> dev
 
     # 获取登陆Cookies
     # 登录时需要POST的数据
@@ -49,11 +64,30 @@ def send(request):
     # 考试详情查询界面
     exam_url = (f'http://fzyz.net/education/score/score/getstuExamsByAcademicYearTermYears.shtml'
                 f'?para.academic_Year={para_academic_Year}'
+<<<<<<< HEAD
                 f'para.KEY={para_KEY}')
+=======
+                f'&para.KEY={para_KEY}')
+>>>>>>> dev
     # 获取json
     req = urllib.request.Request(exam_url,
                                  headers=headers)
     resp = opener.open(req)
+<<<<<<< HEAD
     json_exam = resp.read()
     # 返回json
     return HttpResponse(json_exam)
+=======
+    exam_js = resp.read().decode('gbk')
+#    exam_js = json.dumps(json.loads(exam_js))
+
+    exam_js = '{"data":' + exam_js + "}"
+
+    # 返回json
+    response = HttpResponse(exam_js)
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
+    return response
+>>>>>>> dev

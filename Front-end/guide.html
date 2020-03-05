@@ -1,66 +1,138 @@
 <!DOCTYPE html>
+
 <head>
-    <title>
-        FZYZ&JK综合成绩查询网站
-    </title>
+	<title>
+		FZYZ 官网成绩查询
+	</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+	<style>
+		.jumbotron {
+			background: url(./pic/jumbotron_bg.jpg);
+			background-position: center 0;
+		}
+
+		.footer {
+			border-top: 1px solid #e5e5e5;
+			color: #777;
+			padding: 19px 0;
+			background-color: #f5f5f5;
+		}
+	</style>
+
 </head>
+
 <body>
-<div class="container">
-	<div class="row clearfix">
+	<div class="container">
 		<div class="col-md-12 column">
-			<h3 class="text-center">
-				FZYZ&JK综合成绩查询网站
-			</h3>
-			<ul class="nav nav-tabs">
-				<li class="active">
-					 <a href="#">首页</a>
-				</li>
-				<li>
-					 <a href="https://127.0.0.1/fzyz_net.html">FZYZ官网成绩查询</a>
-				</li>
-				<li>
-					 <a href="https://127.0.0.1/jk.html">JK同学APP成绩查询</a>
-				</li>
-			</ul>
-			<blockquote>
+			<br />
+			<div class="jumbotron">
+				<h1 style="color:#333333;font-family: 微软雅黑;font-size: 7ch;letter-spacing: 0.13ch;">FZYZ & JK 成绩查询</h1>
+				<p>Github 项目：Lao-Liu233 / FZYZ_JK_Grades</p>
 				<p>
-					Github项目 <b>Lao-Liu233/FZYZ_JK_Grades</b> <br>
-					<a href="https://github.com/Lao-Liu233/FZYZ_JK_Grades">项目地址</a>
+					<a style="color: #CCCCCC;" class="btn btn-primary btn-lg"
+						href="https://github.com/Lao-Liu233/FZYZ_JK_Grades" role="button">前往 Github</a>
 				</p>
-			</blockquote>
-			<h1><a class="md-header-anchor"></a><span>FZYZ_JK_Grades</span></h1>
-			<h2><a class="md-header-anchor"></a><span>已知问题</span></h2>
-			<p><span>FZYZ官网查询返回的是未经解析的HTML；</span></p>
-			<p><span>JK仅能返回该科目全部考试成绩，且返回的是未经分析的JSON。</span></p>
-			<h2><a name="to-do-list" class="md-header-anchor"></a><span>TO DO LIST</span></h2>
-			<ul>
-				<li><input type='checkbox' disabled='disabled' />
-					<span>补全FZYZ官网查询科目/考试</span>
+			</div>
+		</div>
+
+		<div class="row align-items-centerjustify-content-center login-center">
+			<ul class="nav nav-tabs nav-justified">
+				<li class="active">
+					<a href="#">首 页</a>
 				</li>
-				<li><input type='checkbox' disabled='disabled' />
-					<span>补全JK查询科目/考试</span>
+				<li>
+					<a href="https://127.0.0.1/fzyz_net.html">FZYZ 官网成绩查询</a>
 				</li>
-				<li><input type='checkbox' disabled='disabled' checked />
-					<span>构建能用的前端</span>
+				<li>
+					<a href="https://127.0.0.1/jk.html">JK APP 成绩查询</a>
 				</li>
-				<li><input type='checkbox' disabled='disabled' checked />
-					<span>构建美丽的前端</span>
-				</li>
-				<li><input type='checkbox' disabled='disabled' checked />
-					<span>将代码部署服务器</span>
-				</li>
-			
 			</ul>
-			<h2><a name="%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%EF%BC%9F" class="md-header-anchor"></a><span>我们需要？</span></h2>
-			<p><span>能构建Ajax前端的人（需要jQery等JS基础）；</span></p>
-			<p><span>能设计美丽前端的人（需要框架基础）；</span></p>
-			<p><span>能补全API查询范围的人（希望高一/高二有兴趣的同学能提供开发所需要的数据）；</span></p>
-			<p><span>发现任何问题后开issue反馈的人；</span></p>
-			<p><span>有兴趣提交任何代码的人。</span></p>
+		</div>
+		<br />
+
+		<div class="col-md-1"></div>
+
+		<div class="col-md-5">
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">网站功能</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>查询 FZYZ 官网成绩；</li>
+						<li>查询 JK APP 成绩。</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">小贴士</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>FZYZ 官网可以多次进行查询，<br />上一次的查询内容将被清空；</li>
+						<li>JK APP 同样可以多次查询，<br />新内容将显示在已查询的下方。</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-5">
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">TO-DO List</h3>
+				</div>
+				<div class="panel-body">
+					<ul>
+						<li>继续美化 UI；</li>
+						<li>尝试为网页添加动画；</li>
+						<li>修复任何被发现的 BUG；</li>
+						<li>将网站推广。</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">作者寄语</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<p>
+							这个网站是Lao_Liu利用休息时间所作，<br />
+							果然写代码比玩游戏有意思多了（笑）;<br />
+							前端代码差不多有400+行，后端250+行，参考了许多网上的资料和教程，
+							也得到了诸多学长的帮助，在此向他们表示衷心的感谢！
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+
+	<div class="footer ">
+		<div class="container">
+			<div class="row footer-top">
+                <ul class="list-inline text-left">
+                    <li>Contact Me: <a href="mailto:laoliu735@gmail.com">Lao_Liu`s Email</a></li>
+                </ul>
+			</div>
+			<hr>
+			<div class="row footer-bottom">
+				<ul class="list-inline text-center">
+					<li>Copyright &copy;Lao_Liu All Rights Reserved.</li>
+					<li>License: GPL v3.0</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </body>
