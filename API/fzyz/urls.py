@@ -21,10 +21,6 @@ from . import jk
 
 urlpatterns = [
     path('fzyz_net/', fzyz_net.send),
-<<<<<<< HEAD
-    path('fzyz_net_exam/', fzyz_net_exam.send),
-=======
 	path('fzyz_net_exam/', fzyz_net_exam.send),
->>>>>>> dev
     path('jk/', jk.send)
 ]
