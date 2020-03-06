@@ -17,11 +17,14 @@
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./js/gudie.js"></script>
 
 	<style>
 		.jumbotron {
-			background: url(./pic/jumbotron_bg.jpg);
-			background-position: center 0;
+			background: url(./pic/jumbotron_bg.png);
+			background-position: 20% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 
 		.footer {
@@ -71,7 +74,7 @@
 
 			<div class="col-md-5">
 
-				<div class="card">
+				<div id="card1" class="card" style="display: none;">
 					<div class="card-header">
 						<h5>网站功能</h5>
 					</div>
@@ -83,7 +86,7 @@
 					</div>
 				</div>
 				<br />
-				<div class="card">
+				<div id="card2" class="card" style="display: none;">
 					<div class="card-header">
 						<h5>小贴士</h5>
 					</div>
@@ -98,9 +101,9 @@
 
 			<div class="col-md-5">
 
-				<div class="card">
+				<div id="card3" class="card" style="display: none;">
 					<div class="card-header">
-						<h5>TO-DO Lis</h5>
+						<h5>TO-DO List</h5>
 					</div>
 					<div class="card-body">
 						<ul>
@@ -111,7 +114,7 @@
 					</div>
 				</div>
 				<br />
-				<div class="card">
+				<div id="card4" class="card" style="display: none;">
 					<div class="card-header">
 						<h5>作者寄语</h5>
 					</div>
@@ -132,7 +135,7 @@
 		<div class="container">
 			<div class="row">
 				<ul class="list-inline text-left">
-					<li>Contact Me: <a href="mailto:laoliu735@gmail.com">Lao_Liu`s Email</a></li>
+					<li>Contact Me: <a href="mailto:laoliu735@gmail.com">Lao_Liu's Email</a></li>
 				</ul>
 			</div>
 			<hr>
