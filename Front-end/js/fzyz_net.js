@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     $("#next1").click(function () {
-        document.getElementById("panel1").style.display = "inline";
+        $("#card1").fadeIn();
     });
 
     $("#next2").click(function () {
-        document.getElementById("panel2").style.display = "inline";
+        $("#card2").fadeIn();
     });
 
 
@@ -18,6 +18,10 @@ $(document).ready(function () {
             data: $('#form').serialize(),
             success: function (data) { //【成功回调】
                 console.log("success");
+                $("#next2").attr("class","btn btn-success");
+                $("#next2").html("成功");
+                $("#card2").fadeIn();
+                $("#warning").remove();
                 json = eval(data.data);
                 for (var i = 0; i < json.length; i++) {
                     $('#select2').append("<option value='" + json[i].KEY + "'>" + json[i].TEXT + "</option>");
@@ -25,8 +29,10 @@ $(document).ready(function () {
             },
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
-                $("#panel1_inside").attr("class","panel panel-danger");
-                document.getElementById("panel2").style.display = "none";
+                $("#next2").attr("class","btn btn-danger");
+                $("#next2").html("请重试");
+                $("#card2").fadeOut();
+                $("#warning").append("<p style='color: red;'>账号/密码错误或服务器/网络问题,<br />若一直出现此问题请联系网站管理员。</p>");
             }
         });
     });
@@ -57,10 +63,13 @@ $(document).ready(function () {
                 );
                 $("#table1 tr").eq(0).remove();
                 $("#table1 tr").eq(-1).remove();
+                $("#card3").fadeIn();
             },
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
-                $("#panel2_inside").attr("class","panel panel-danger");
+                $("#submit").attr("class","btn btn-danger");
+                $("#submit").attr("value","请重试");
+                $("#warning2").append("<br /><p style='color: red;'>服务器/网络问题，<br />若一直出现此问题请联系网站管理员。</p>");
             }
         });
     });

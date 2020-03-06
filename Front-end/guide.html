@@ -5,8 +5,17 @@
 		FZYZ 官网成绩查询
 	</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
 	<style>
@@ -39,74 +48,74 @@
 			</div>
 		</div>
 
-		<div class="row align-items-centerjustify-content-center login-center">
-			<ul class="nav nav-tabs nav-justified">
-				<li class="active">
-					<a href="#">首 页</a>
-				</li>
-				<li>
-					<a href="https://127.0.0.1/fzyz_net.html">FZYZ 官网成绩查询</a>
-				</li>
-				<li>
-					<a href="https://127.0.0.1/jk.html">JK APP 成绩查询</a>
-				</li>
-			</ul>
-		</div>
+		<nav class="navbar navbar-expand-md navbar-light bg-light">
+			<a class="navbar-brand" href="#">首页</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="https://127.0.0.1/jk.html">FZYZ 官网成绩查询</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://127.0.0.1/jk.html">JK APP 成绩查询</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		<br />
+		<div class="row">
 
-		<div class="col-md-1"></div>
+			<div class="col-md-1"></div>
 
-		<div class="col-md-5">
+			<div class="col-md-5">
 
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">网站功能</h3>
+				<div class="card">
+					<div class="card-header">
+						<h5>网站功能</h5>
+					</div>
+					<div class="card-body">
+						<ul>
+							<li>查询 FZYZ 官网成绩；</li>
+							<li>查询 JK APP 成绩。</li>
+						</ul>
+					</div>
 				</div>
-				<div class="panel-body">
-					<ul>
-						<li>查询 FZYZ 官网成绩；</li>
-						<li>查询 JK APP 成绩。</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">小贴士</h3>
-				</div>
-				<div class="panel-body">
-					<ul>
-						<li>FZYZ 官网可以多次进行查询，<br />上一次的查询内容将被清空；</li>
-						<li>JK APP 同样可以多次查询，<br />新内容将显示在已查询的下方。</li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="col-md-5">
-
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">TO-DO List</h3>
-				</div>
-				<div class="panel-body">
-					<ul>
-						<li>继续美化 UI；</li>
-						<li>尝试为网页添加动画；</li>
-						<li>修复任何被发现的 BUG；</li>
-						<li>将网站推广。</li>
-					</ul>
+				<br />
+				<div class="card">
+					<div class="card-header">
+						<h5>小贴士</h5>
+					</div>
+					<div class="card-body">
+						<ul>
+							<li>FZYZ 官网可以多次进行查询，<br />上一次的查询内容将被清空；</li>
+							<li>JK APP 同样可以多次查询，<br />新内容将显示在已查询的下方。</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">作者寄语</h3>
+			<div class="col-md-5">
+
+				<div class="card">
+					<div class="card-header">
+						<h5>TO-DO Lis</h5>
+					</div>
+					<div class="card-body">
+						<ul>
+							<li>继续美化 UI；</li>
+							<li>修复任何被发现的 BUG；</li>
+							<li>将网站推广。</li>
+						</ul>
+					</div>
 				</div>
-				<div class="panel-body">
-					<div class="col-md-1"></div>
-					<div class="col-md-10">
+				<br />
+				<div class="card">
+					<div class="card-header">
+						<h5>作者寄语</h5>
+					</div>
+					<div class="card-body">
 						<p>
 							这个网站是Lao_Liu利用休息时间所作，<br />
 							果然写代码比玩游戏有意思多了（笑）;<br />
@@ -119,18 +128,17 @@
 		</div>
 	</div>
 
-	<div class="footer ">
+	<div class="footer">
 		<div class="container">
-			<div class="row footer-top">
-                <ul class="list-inline text-left">
-                    <li>Contact Me: <a href="mailto:laoliu735@gmail.com">Lao_Liu`s Email</a></li>
-                </ul>
+			<div class="row">
+				<ul class="list-inline text-left">
+					<li>Contact Me: <a href="mailto:laoliu735@gmail.com">Lao_Liu`s Email</a></li>
+				</ul>
 			</div>
 			<hr>
-			<div class="row footer-bottom">
-				<ul class="list-inline text-center">
+			<div class="row">
+				<ul class="list-inline m-auto">
 					<li>Copyright &copy;Lao_Liu All Rights Reserved.</li>
-					<li>License: GPL v3.0</li>
 				</ul>
 			</div>
 		</div>
