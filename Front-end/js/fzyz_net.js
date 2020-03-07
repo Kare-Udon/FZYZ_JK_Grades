@@ -62,6 +62,7 @@ $(document).ready(function () {
                     )
                 );
                 $("#table1 tr").eq(0).remove();
+                $("#table1 tr").eq(0).remove();
                 $("#table1 tr").eq(-1).remove();
                 $("#card3").fadeIn();
             },
