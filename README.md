@@ -12,7 +12,7 @@
 
 ### Demo API
 
-https://lao-liu233.usw1.kubesail.xyz/
+https://api2.laoliu.eu.org
 
 https://api.laoliu.eu.org:4438
 
