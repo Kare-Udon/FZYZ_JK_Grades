@@ -49,7 +49,7 @@ $(document).ready(function () {
             $("#progress1_inside").html("很多浏览器的进度条都是假的");
         }
         function timeout2() {
-            $("#progress1_inside").attr("style", "width: 15%");
+            $("#progress1_inside").attr("style", "width: 25%");
             $("#progress1_inside").html("比如这样");
         }
         function timeout3() {
@@ -111,7 +111,7 @@ $(document).ready(function () {
             $("#progress2_inside").html("很多浏览器的进度条都是假的");
         }
         function timeout2() {
-            $("#progress2_inside").attr("style", "width: 15%");
+            $("#progress2_inside").attr("style", "width: 25%");
             $("#progress2_inside").html("比如这样");
         }
         function timeout3() {
