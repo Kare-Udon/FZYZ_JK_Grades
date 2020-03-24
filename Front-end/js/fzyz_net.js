@@ -19,7 +19,7 @@ $(document).ready(function () {
             success: function (data) { //【成功回调】
                 console.log("success");
                 $("#progress1").fadeOut();
-                $("#next2").attr("class", "btn btn-success");
+                $("#next2").attr("class", "btn btn-success btn-sm");
                 $("#next2").html("成功");
                 $("#card2").fadeIn();
                 $("#warning").remove();
@@ -31,7 +31,7 @@ $(document).ready(function () {
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
                 $("#progress1").fadeOut();
-                $("#next2").attr("class", "btn btn-danger");
+                $("#next2").attr("class", "btn btn-danger btn-sm");
                 $("#next2").html("请重试");
                 $("#card2").fadeOut();
                 $("#warning").append("<p style='color: red;'>账号/密码错误或服务器/网络问题,<br />若一直出现此问题请联系网站管理员。</p>");
@@ -70,6 +70,8 @@ $(document).ready(function () {
             data: $('#form').serialize(),
             success: function (data) { //【成功回调】
                 console.log("success");
+                $("#submit").attr("class", "btn btn-success btn-sm");
+                $("#submit").val("再次查询");
                 $("#progress2").fadeOut();
                 $("#tbody1").find("tr").remove();
                 $("#tbody1").append(data);
@@ -95,7 +97,7 @@ $(document).ready(function () {
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
                 $("#progress2").fadeOut();
-                $("#submit").attr("class", "btn btn-danger");
+                $("#submit").attr("class", "btn btn-danger btn-sm");
                 $("#submit").attr("value", "请重试");
                 $("#warning2").append("<br /><p style='color: red;'>服务器/网络问题，<br />若一直出现此问题请联系网站管理员。</p>");
             }

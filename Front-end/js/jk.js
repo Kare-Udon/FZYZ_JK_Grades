@@ -13,8 +13,8 @@ $(document).ready(function () {
             success: function (data) { //【成功回调】
                 console.log("success");
                 $("#progress1").fadeOut();
-                $("#submit").attr("class","btn btn-primary");
-                $("#submit").attr("value","提交查询");
+                $("#submit").attr("class","btn btn-success btn-sm");
+                $("#submit").attr("value","再次查询");
                 $("#table1").append(data);
                 $("#card3").fadeIn();
                 $("#warning").remove();
@@ -22,7 +22,7 @@ $(document).ready(function () {
             error: function (xhr, type) { //【失败回调】
                 console.log("error");
                 $("#progress1").fadeOut();
-                $("#submit").attr("class","btn btn-danger");
+                $("#submit").attr("class","btn btn-danger btn-sm");
                 $("#submit").attr("value","请重试");
                 $("#warning").append("<br /><p style='color: red;'>账号/密码错误或服务器/网络问题,<br />若一直出现此问题请联系网站管理员。</p>");
             }

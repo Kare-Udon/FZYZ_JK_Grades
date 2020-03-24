@@ -107,29 +107,68 @@ python3 manage.py runserver 0.0.0.0:8000
 
 ## 已知问题
 
-暂无。
+- FZYZ 官网查询中，查询卷面成绩时无法显示等第。
+
+> 据分析此问题来源于 FZYZ 官网，由于较难修复暂时挂起。
 
 ## TO DO LIST
 
 - 继续美化 UI；
-- 尝试为网页添加动画；
 - 修复任何被发现的 BUG；
 - 在KubeSail上搭建稳定后端；
 - 将网站推广。
 
 ## 我们需要？
 
-1.  能构建Ajax前端的人（需要 jQuery 等 javaScript 基础）
 2.  能设计美丽前端的人（需要框架基础）
 4.  发现任何问题后开 issue 反馈的人
 5.  有兴趣提交任何代码的人
 
 ## 特别感谢
 
+### 开发人员
+
+[@Lao_Liu](https://github.com/Lao-Liu233)
+
+- 代码开发
+- UI 设计
+- API 设计
+- Debugger
+
+[@yihanwu1024]( https://github.com/yihanwu1024)
+
+- UI 设计
+- Debugger
+
+[@zhangshifen38](https://github.com/zhangshifen38)
+
+- Debugger
+
+[@jerryc05](https://github.com/jerryc05)
+
+- 技术顾问
+- Debugger
+
+[@Googleplex](https://github.com/y-young)
+
+- 技术顾问
+
 感谢 [@mnihyc](https://github.com/mnihyc) 提供的 Demo API服务器！
 
-感谢 Kubesail 为开发者提供的 Kubenetes 部署服务！
+### 借物表
 
-感谢 Cloudflare 为开发者提供的 CDN 服务！
+Django https://www.djangoproject.com/
 
-感谢 [@Googleplex](https://github.com/y-young) [@jerryc05](https://github.com/jerryc05) 等为本项目提出建议！
+jQuery https://jquery.com/
+
+Bootstrap https://getbootstrap.com/
+
+Material Design for Bootstrap https://mdbootstrap.com/
+
+Cloudflare CDN https://www.cloudflare.com/
+
+jsDelivr CDN https://www.jsdelivr.com/
+
+Kubusail https://kubesail.com/
+
+......
