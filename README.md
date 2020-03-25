@@ -1,6 +1,6 @@
 # FZYZ_JK_Grades
 
-![](https://img.shields.io/badge/language-python-blue.svg) ![](https://img.shields.io/github/issues/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/stars/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/v/release/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/license/Lao-Liu233/FZYZ_JK_Grades)
+![](https://img.shields.io/badge/language-python-blue.svg) ![](https://img.shields.io/github/issues/Lao-Liu233/FZYZ_JK_Grades) ![](https://img.shields.io/github/stars/Lao-Liu233/FZYZ_JK_Grades) ![](https://img.shields.io/github/v/release/Lao-Liu233/FZYZ_JK_Grades) ![](https://img.shields.io/github/license/Lao-Liu233/FZYZ_JK_Grades)
 
 ## 项目介绍
 
