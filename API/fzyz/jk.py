@@ -1,13 +1,9 @@
 # coding: utf-8
 
-import sys
-import io
-import urllib.request
-import http.cookiejar
-from django.http import HttpResponse
 import json
 import requests
-import re
+from http.cookiejar import CookieJar
+from django.http import HttpResponse
 
 
 def send(request):
@@ -34,7 +30,7 @@ def send(request):
     # 登录时表单提交到的地址（用开发者工具可以看到）
     url_login = 'https://api.fclassroom.com/pf-account-family/api/account/student/old/login'
     # 设置cookie容器
-    cookie = http.cookiejar.CookieJar()
+    cookie = CookieJar()
     # 发送POST请求
     response = requests.post(url=url_login,
                              headers=headers_autho,
