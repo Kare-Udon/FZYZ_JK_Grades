@@ -1,8 +1,12 @@
 # FZYZ_JK_Grades
 
+![](https://img.shields.io/badge/language-python-blue.svg) ![](https://img.shields.io/github/issues/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/stars/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/v/release/Lao-Liu233/FZYZ_JK_Grades)![](https://img.shields.io/github/license/Lao-Liu233/FZYZ_JK_Grades)
+
 ## 项目介绍
 
 用于查询 FZYZ 官网成绩和 APP “ JK 同学 ” 内成绩的 API 及前端网站。
+
+![](https://cdn.jsdelivr.net/gh/Lao-Liu233/blog_imgs/fzyz_jk_grades/guide.png)
 
 ## Demo
 
