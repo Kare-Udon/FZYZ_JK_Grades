@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Docker Image CI
 
 on:
@@ -24,3 +25,33 @@ jobs:
       with:
         name: docker-image
         path: FZYZ_JK_Grades/docker
+=======
+name: Docker Image CI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Clone
+      run: |
+          git clone https://github.com/Lao-Liu233/FZYZ_JK_Grades.git
+
+    - name: Build the Docker image
+      run: |
+          cd FZYZ_JK_Grades/docker
+          docker build . --file Dockerfile --tag fzyz_jk_grades_api:$(date +%s)
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: docker-image
+        path: FZYZ_JK_Grades/docker
+>>>>>>> 4b07b583126a76496a40028f92dc7998bb7c6cd5
