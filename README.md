@@ -151,6 +151,7 @@ python3 manage.py runserver 0.0.0.0:8000
 [@jerryc05](https://github.com/jerryc05)
 
 - 技术顾问
+- 代码开发
 - Debugger
 
 [@Googleplex](https://github.com/y-young)
