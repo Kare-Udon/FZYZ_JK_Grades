@@ -20,9 +20,3 @@ jobs:
       run: |
           cd FZYZ_JK_Grades/docker
           docker build . --file Dockerfile --tag fzyz_jk_grades_api:$(date +%s)
-
-    - name : Upload artifact
-       uses: actions/upload-artifact@master
-       with:
-          name: OpenWrt
-          path: FZYZ_JK_Grades/docker
