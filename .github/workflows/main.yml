@@ -20,3 +20,9 @@ jobs:
       run: |
           cd FZYZ_JK_Grades/docker
           docker build . --file Dockerfile --tag fzyz_jk_grades_api:$(date +%s)
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: docker-image
+        path: FZYZ_JK_Grades/docker
