@@ -4,8 +4,8 @@ MAINTAINER Lao_Liu
 
 RUN /bin/bash
 RUN cd /root \
-	&& apt update \
-	&& apt -y install git \
+#	&& apt update \
+#	&& apt -y install git \
 	&& git clone https://github.com/Lao-Liu233/FZYZ_JK_Grades.git \
 	&& cd /root/FZYZ_JK_Grades \
 	&& pip3 install -r requirements.txt
