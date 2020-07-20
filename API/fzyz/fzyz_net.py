@@ -12,6 +12,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 
 def send(request):
+    
     # 从前端获取数据
     request.encoding = 'utf-8'
     user = request.GET.get('user')

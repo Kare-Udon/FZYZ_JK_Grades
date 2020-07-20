@@ -42,7 +42,7 @@
         <div class="col-md-12 column">
             <div class="row">
                 <div class="col-md-6">
-                    <form id='form' role="form" action="">
+                    <form id="form" role="form" action="">
 
                         <div class="card text-white">
                             <div class="card-body">
@@ -65,118 +65,181 @@
                             </div>
                         </div>
                         <br />
+						
+						<div id="card2" class="card text-white" style="display: none;">
+							<div class="card-body">
+									<div class="form-row align-items-center" style="color: black">
+										<div class="col-auto">
+										  <p>
+											  <label>
+											    <input type="checkbox" name="subject" value="1" id="基本科_0">
+											    数学</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="2" id="基本科_1">
+											    语文</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="3" id="基本科_2">
+											    英语</label>
+											  <br>
+										  </p>
+                                        </div>
+										<div class="col-auto">
+										  <p>
+											  <label>
+											    <input type="checkbox" name="subject" value="4" id="理科_0">
+											    物理</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="5" id="理科_1">
+											    化学</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="6" id="理科_2">
+											    生物</label>
+											  <br>
+										  </p>
+                                        </div>
+										<div class="col-auto">
+										  <p>
+											  <label>
+											    <input type="checkbox" name="subject" value="7" id="文科_0">
+											    政治</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="8" id="文科_1">
+											    历史</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="9" id="文科_2">
+											    地理</label>
+											  <br>
+										  </p>
+                                        </div>
+										
+										<div class="col-auto">
+										  <p>
+											  <label>
+											    <input type="checkbox" name="subject" value="10" id="其他_0">
+											    信息</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="11" id="其他_1">
+											    理综</label>
+											  <br>
+											  <label>
+											    <input type="checkbox" name="subject" value="12" id="其他_2">
+											    文综</label>
+											  <br>
+										  </p>
+                                        </div>
+									</div>
+									<input style="margin-left: -1px; " class="btn btn-primary btn-sm" id="submit"
+                                    type="button" value="提交查询" />
+								</form>
+							</div>
+						</div>
 
+<!--
                         <div id="card2" class="card text-white" style="display: none;">
                             <div class="card-body">
-
-                                <div class="radio">
-                                    <table class="table">
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+							
+											<div class="col-auto">
+                                <div class="form-check form-check-inline form-control">
+								<div class="col-auto">
+                                                <div class="form-check-input ">
                                                     <input type="radio" class="custom-control-input" id="defaultInline1"
                                                         name="subject" value="1">
                                                     <label class="custom-control-label" for="defaultInline1"> 数学
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline2"
                                                         name="subject" value="2">
                                                     <label class="custom-control-label" for="defaultInline2"> 语文
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline3"
                                                         name="subject" value="3">
                                                     <label class="custom-control-label" for="defaultInline3"> 英语
                                                     </label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+											</div>
+											<div class="col-auto">
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline4"
                                                         name="subject" value="4">
                                                     <label class="custom-control-label" for="defaultInline4"> 物理
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline5"
                                                         name="subject" value="5">
                                                     <label class="custom-control-label" for="defaultInline5"> 化学
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline6"
                                                         name="subject" value="6">
                                                     <label class="custom-control-label" for="defaultInline6"> 生物
                                                     </label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+												</div>
+											<div class="col-auto">
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline7"
                                                         name="subject" value="7">
                                                     <label class="custom-control-label" for="defaultInline7"> 政治
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline8"
                                                         name="subject" value="8">
                                                     <label class="custom-control-label" for="defaultInline8"> 历史
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input" id="defaultInline9"
                                                         name="subject" value="9">
                                                     <label class="custom-control-label" for="defaultInline9"> 地理
                                                     </label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+												</div>
+											<div class="col-auto">
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input"
                                                         id="defaultInline10" name="subject" value="10">
                                                     <label class="custom-control-label" for="defaultInline10"> 信息
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input"
                                                         id="defaultInline11" name="subject" value="11">
                                                     <label class="custom-control-label" for="defaultInline11"> 理综
                                                     </label>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div class="custom-control custom-radio custom-control-inline">
+
+                                                <div class="form-check-input">
                                                     <input type="radio" class="custom-control-input"
                                                         id="defaultInline12" name="subject" value="12">
                                                     <label class="custom-control-label" for="defaultInline12"> 文综
                                                     </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
+												</div>
+						</div>
+
                                 </div>
+								</div>
                                 <input style="margin-left: -1px; " class="btn btn-primary btn-sm" id="submit"
                                     type="button" value="提交查询" />
                                 <br />
@@ -190,7 +253,10 @@
                                 </div>
                                 <div id="warning"></div>
                             </div>
+
                         </div>
+-->
+						
                     </form>
                     <br />
                 </div>
@@ -217,7 +283,6 @@
                 </a>
             </div>
             <br />
-        </div>
         </div>
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="https://blog.laoliu.icu/"> Lao_Liu</a>
