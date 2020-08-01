@@ -1,37 +1,19 @@
-# coding: utf-8
-
-import sys
 from urllib.request import Request, build_opener, HTTPCookieProcessor
 from urllib.parse import urlencode
 from http.cookiejar import CookieJar
-from django.http import HttpResponse
-
-# 改变标准输出的默认编码
-sys.stdout.reconfigure(encoding='utf-8')
 
 
-def send(request):
-    # 从前端获取数据
-    request.encoding = 'utf-8'
-    user = request.GET.get('user')
-    passwd = request.GET.get('passwd')
-    para_academic_Year = request.GET.get('para_academic_Year')
-    para_KEY = request.GET.get('para_KEY')
+def fzyz_exam(username, passwd, para_academic_Year, para_KEY):
 
     # 获取登陆Cookies
     # 登录时需要POST的数据
     data = {
-        'staffCode': user,
-        'password' : passwd,
+        'staffCode': username,
+        'password': passwd,
         'loginRole': '2',
     }
     # 登录时表单提交到的地址（用开发者工具可以看到）
     login_url = 'http://fzyz.net/sys/login.shtml'
-    # 设置请求头
-    # headers = {
-    #     'User-agent':
-    #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
-    # }
     # 将数据转化为bytes格式
     post_data = urlencode(data).encode('utf-8')
     # 构造登录请求
@@ -57,10 +39,4 @@ def send(request):
 
     exam_js = '{"data":' + exam_js + "}"
 
-    # 返回json
-    response = HttpResponse(exam_js)
-    response["Access-Control-Allow-Origin"] = "*"
-    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
-    response["Access-Control-Max-Age"] = "1000"
-    response["Access-Control-Allow-Headers"] = "*"
-    return response
+    return exam_js

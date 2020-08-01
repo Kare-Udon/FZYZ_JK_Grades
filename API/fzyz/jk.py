@@ -1,26 +1,16 @@
-# coding: utf-8
-
 import json
 import requests
 from http.cookiejar import CookieJar
-from django.http import HttpResponse
 
 
-def send(request):
-    # 从前端获取数据
-    request.encoding = 'utf-8'
-    user = request.GET.get('user')
-    passwd = request.GET.get('passwd')
-    subject = request.GET.getlist('subject')  # 列表
-
-    if subject == []:
-        response = HttpResponse()
-        response.write("No Subject Selected!")
-        return response
+def jk(username,passwd,exam_id):
+    if exam_id == []:
+        message = "INPUT ERROR"
+        return message
     else:
         # 获取Authorization
         # 登录时需要POST的数据
-        data = {'loginName': user, 'password': passwd}
+        data = {'loginName': username, 'password': passwd}
     # 定义认证
         Autho = 'Bearer'
     # 设置请求头
@@ -79,7 +69,7 @@ def send(request):
     # 成绩查询地址构建
         html_back = ""
         school_id = '2246'  # 可拓展项
-        for i in subject:
+        for i in exam_id:
             url_score = (f'https://api.fclassroom.com/ud-api-student/api/v1/exam/list'
                          f'?examSubjectValue={i}'
                          f'&offset=1'
@@ -100,12 +90,6 @@ def send(request):
             json_score = str_score_load['data']
     # 提取所需数据，构建返回json
 
-    # json_back = {
-    #                "examName": str(json_score[0]['examName']),
-    #                "score": str(json_score[0]['score']),
-    #                "clzssAvgScore": str(json_score[0]['clzssAvgScore']),
-    #                "gradeAvgScore": str(json_score[0]['gradeAvgScore'])
-    #            }
             examName = str(json_score[0]['examName'])
             score = str(json_score[0]['score'])
             clzssAvgScore = str(json_score[0]['clzssAvgScore'])
@@ -113,14 +97,9 @@ def send(request):
 
     # 构建返回的html
             html_back_pre = (f'<table class="table">'
-                         f'<thead><th>考试名称</th><th>考试成绩</th><th>班级均分</th><th>年段均分</th></thead>'
-                         f'<tr><th>{examName}</th><th>{score}</th><th>{clzssAvgScore}</th><th>{gradeAvgScore}</th></tr>'
-                         f'</table><br />')
+                             f'<thead><th>考试名称</th><th>考试成绩</th><th>班级均分</th><th>年段均分</th></thead>'
+                             f'<tr><th>{examName}</th><th>{score}</th><th>{clzssAvgScore}</th><th>{gradeAvgScore}</th></tr>'
+                             f'</table><br />')
             html_back += html_back_pre
 
-        response = HttpResponse(html_back)
-        response["Access-Control-Allow-Origin"] = "*"
-        response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
-        response["Access-Control-Max-Age"] = "100000"
-        response["Access-Control-Allow-Headers"] = "*"
-        return response
+        return html_back
