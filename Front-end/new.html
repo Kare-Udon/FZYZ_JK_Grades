@@ -20,13 +20,13 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#" >FZYZ_JK_Grades</a> 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal"> About </button>
+  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#about"> About </button>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">About Me</h5>
+          <h5 class="modal-title" id="AboutModalLabel">About Me</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
         </div>
         <div class="modal-body text-center"> <img src="pic/Avatar.png" width="150" height="150" alt="" style="border-radius: 150px;"/>
@@ -57,7 +57,7 @@
           <div class="col-md-12"> <br />
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-outline-primary active" id="account_switch1" name="using_code" value="0">账号密码</button>
-              <button type="button" class="btn btn-outline-primary" id="account_switch2" name="using_code" value="1">&nbsp;身份码&nbsp;</button>
+              <button type="button" class="btn btn-outline-primary" id="account_switch2" name="using_code" value="1" disabled>&nbsp;身份码&nbsp;</button>
             </div>
             <p></p>
           </div>
@@ -208,5 +208,36 @@
     </div>
   </div>
 </footer>
+	
+<div class="modal fade" id="warn-net-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="warn-net-error-ModalLabel">警告</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body"> 账号/密码有误 或 网络错误。<br />请检查 或 稍后再试。 </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<div class="modal fade" id="warn-input-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="warn-input-error-ModalLabel">警告</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body"> 账号/密码 格式错误;<br />请检查后重试。 </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

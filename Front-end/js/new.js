@@ -15,13 +15,19 @@ $(function () {
 	const fyexam_form_s = $("#fzyz_exam_form");
 	const jk_form_s = $("#jk_form");
 	const grades_s = $("#grades");
-
+	
 	const form_s = $("#form");
 
 	var using_code = "0"
 
 	btn1_s.on("click", function () {
-		card2_s.fadeIn();
+		
+		if( $("#username").val() == "" || $("#passwd").val() == "" ){
+			$("#warn-input-error").modal("show");
+			card2_s.fadeOut();
+		} else {
+			card2_s.fadeIn();
+		}
 	});
 
 	acc_switch1_s.on("click", function () {
@@ -80,6 +86,7 @@ $(function () {
 			console.log("error");
 			fyexam_form_s.fadeOut();
 			sub_s.fadeOut();
+			$("#warn-net-error").modal("show");
 			return;
 		});
 	});
@@ -87,7 +94,7 @@ $(function () {
 	term2_s.on("click", function () {
 		term2_s.addClass("active");
 		term1_s.removeClass("active");
-		fyexam_form_s.fadeIn();
+
 		$.ajax({
 			type: "get",
 			url: "http://127.0.0.1:8000/main/",
@@ -106,6 +113,12 @@ $(function () {
 			};
 			sub_s.fadeIn();
 			return;
+		}, function (xhr, type) { //【失败回调】
+			console.log("error");
+			fyexam_form_s.fadeOut();
+			sub_s.fadeOut();
+			$("#warn-net-error").modal("show");
+			return;
 		});
 	});
 
@@ -123,7 +136,7 @@ $(function () {
 			return;
 		}, function (xhr, type) { //【失败回调】
 			console.log("error");
-
+			$("#warn-net-error").modal("show");
 			return;
 		});
 	})

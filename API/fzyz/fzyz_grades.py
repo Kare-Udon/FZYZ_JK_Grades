@@ -48,5 +48,10 @@ def fzyz_grades(username, passwd, exam_id):
     # 解析获取HTML，截取所需部分
     soup = BeautifulSoup(get_html, "html.parser")
     table = soup.find("table", attrs={"cellspacing": "1"})
+    #删去多余信息
+    tr_s = table.findAll('tr')
+    tr_s[0].extract()
+    tr_s[1].extract()
+    tr_s[-1].extract()
 
     return table
