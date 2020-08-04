@@ -1,6 +1,7 @@
 from urllib.request import Request, build_opener, HTTPCookieProcessor
 from urllib.parse import urlencode
 from http.cookiejar import CookieJar
+import json
 
 
 def fzyz_exam(username, passwd, para_academic_Year, para_KEY):
@@ -35,8 +36,5 @@ def fzyz_exam(username, passwd, para_academic_Year, para_KEY):
     req = Request(exam_url, headers={})
     resp = opener.open(req)
     exam_js = resp.read().decode('gbk')
-    #    exam_js = json.dumps(json.loads(exam_js))
-
-    exam_js = '{"data":' + exam_js + "}"
-
+    
     return exam_js
