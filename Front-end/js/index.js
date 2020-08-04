@@ -19,6 +19,7 @@ $(function () {
 	const form_s = $("#form");
 
 	var using_code = "0"
+	var api_url = "http://127.0.0.1:8000/main/" //于此修改API网址
 
 	btn1_s.on("click", function () {
 		
@@ -66,7 +67,7 @@ $(function () {
 		term2_s.removeClass("active");
 		$.ajax({
 			type: "get",
-			url: "http://127.0.0.1:8000/main/",
+			url: api_url,
 			dataType: 'html',
 			data: form_s.serialize() + "&using_code=" + using_code + "&para_KEY=1&exam_or_grades=1",
 		}).then(function (data) { //【成功回调】
@@ -97,7 +98,7 @@ $(function () {
 
 		$.ajax({
 			type: "get",
-			url: "http://127.0.0.1:8000/main/",
+			url: api_url,
 			dataType: 'html',
 			data: form_s.serialize() + "&using_code=" + using_code + "&para_KEY=2&exam_or_grades=1",
 		}).then(function (data) { //【成功回调】
@@ -125,7 +126,7 @@ $(function () {
 	sub_s.on("click", function () {
 		$.ajax({
 			type: "get",
-			url: "http://127.0.0.1:8000/main/",
+			url: api_url,
 			dataType: 'html',
 			data: form_s.serialize() + "&using_code=" + using_code + "&exam_or_grades=0",
 		}).then(function (data) { //【成功回调】
