@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import main
+from . import firebase
 
 urlpatterns = [
     path('main/', main.send),
+    path('firebase/', firebase.send)
 ]
