@@ -1,9 +1,12 @@
+import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from django.http import HttpResponse
 
-cred = credentials.Certificate('./js/serviceAccount.json')
+env_dist = os.environ
+
+cred = credentials.Certificate(env_dist.get('FIREBASE'))
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
@@ -34,8 +37,13 @@ def send(request):
     jk_passwd = request.GET.get('jk_passwd')
     ident_code = request.GET.get('ident_code')
 
-    fzyz_data = "{u'username': u'{}',u'passwd': u'{}'}".format(fzyz_username,fzyz_passwd)
-    jk_data = "{u'username': u'{}',u'passwd': u'{}'}".format(jk_username,jk_passwd)
+    fzyz_data = {}
+    jk_data = {}
+    fzyz_data['username'] = fzyz_username
+    fzyz_data['passwd'] = fzyz_passwd
+    jk_data['username'] = jk_username
+    jk_data['passwd'] = jk_passwd
+
     add_fzyz_(ident_code,fzyz_data)
     add_jk_(ident_code,jk_data)
 
