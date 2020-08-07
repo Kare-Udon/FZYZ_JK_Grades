@@ -21,29 +21,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#" >FZYZ_JK_Grades</a> 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#about"> About </button>
-  <!-- Modal -->
-  <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="AboutModalLabel">About Me</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-        </div>
-        <div class="modal-body text-center"> <img src="pic/Avatar.png" width="150" height="150" alt="" style="border-radius: 150px;"/>
-          <p></p>
-          <h5>Lao_Liu</h5>
-          <h5>Male / Lazy / Coding</h5>
-          <br />
-          <p>GitHub 项目： <a href="https://github.com/Lao-Liu233/FZYZ_JK_Grades">FZYZ_JK_Grades</a></p>
-          <p>Blog: <a href="https://blog.laoliu.eu.org">Lao_Liu Blog</a></p>
-          <p>联系我：<a href="mailto:FZYZ_JK_Grades@laoliu.eu.org">Mail</a></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  &nbsp;
+  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#identycode"> 注册身份码 </button>
 </nav>
 <p></p>
 <div class="row">
@@ -208,6 +187,66 @@
     </div>
   </div>
 </footer>
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="AboutModalLabel">About Me</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body text-center"> <img src="pic/Avatar.png" width="150" height="150" alt="" style="border-radius: 150px;"/>
+        <p></p>
+        <h5>Lao_Liu</h5>
+        <h5>Male / Lazy / Coding</h5>
+        <br />
+        <p>GitHub 项目：<a href="https://github.com/Lao-Liu233/FZYZ_JK_Grades">FZYZ_JK_Grades</a></p>
+        <p>Blog: <a href="https://blog.laoliu.eu.org">Lao_Liu Blog</a></p>
+        <p>联系我：<a href="mailto:FZYZ_JK_Grades@laoliu.eu.org">Mail</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="identycode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="identycodeLabel">注册身份码</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+  </div>
+  <br />
+	<div class="modal-body text-center">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+		  <form>
+        <div class="form-group">
+          <input type="text" class="form-control" autocomplete="on" id="" name="fzyz_user" placeholder="FZYZ 账号">
+          <br />
+          <input type="password" class="form-control" autocomplete="on" id="" placeholder="FZYZ 密码" name="fzyz_passwd">
+          <br />
+          <input type="text" class="form-control" autocomplete="on" id="" name="jk_user" placeholder="JK 账号">
+          <br />
+          <input type="password" class="form-control" autocomplete="on" id="" placeholder="JK 密码" name="jk_passwd">
+			<br />
+			<input type="text" class="form-control" autocomplete="on" id="" placeholder="身份码" name="identycode">
+			<small  class="form-text text-muted" style="text-align-last: left">身份码由用户任选英文、数字、特殊符号构成。</small>
+			<br />
+			<input class="btn btn-primary" id="register" type="button" value="注册" />
+        </div>
+			  </form>
+        <div class="col-1"></div>
+      </div> 
+    </div>
+	  <br />
+  </div>
+	</div>
+</div>
+</div>
+</div>
 <div class="modal fade" id="warn-net-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

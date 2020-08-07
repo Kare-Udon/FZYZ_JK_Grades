@@ -2,6 +2,7 @@ from urllib.request import Request, build_opener, HTTPCookieProcessor
 from urllib.parse import urlencode
 from http.cookiejar import CookieJar
 import json
+import re
 
 
 def fzyz_exam(username, passwd, para_academic_Year, para_KEY):
@@ -36,5 +37,11 @@ def fzyz_exam(username, passwd, para_academic_Year, para_KEY):
     req = Request(exam_url, headers={})
     resp = opener.open(req)
     exam_js = resp.read().decode('gbk')
+
+    #删除冗余信息，是小屏设备能正常显示。
+    exam_js = re.sub(r'部.*?第',"",exam_js)
+    exam_js = re.sub(r'高中',"",exam_js)
+    exam_js = re.sub(r'一学期',"",exam_js)
+    exam_js = re.sub(r'二学期',"",exam_js)
     
     return exam_js

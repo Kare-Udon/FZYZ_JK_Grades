@@ -1,9 +1,9 @@
-import sys 
 from django.http import HttpResponse
 import requests
 from .fzyz_exam import fzyz_exam
 from .fzyz_grades import fzyz_grades
 from .jk import jk
+from .firebase import get_fzyz_ , get_jk_
 
 def send(request):
     # 从前端获取数据
@@ -12,7 +12,6 @@ def send(request):
     passwd = request.GET.get('passwd')
     ident_code = request.GET.get('ident_code')
     fzyz_or_jk = request.GET.get('fzyz_or_jk')
-    # 1 == 查询 fzyz_exam; 2 == 查询 fzyz_grades; 3 == 查询 jk。
     exam_or_grades = request.GET.get('exam_or_grades')
     using_code = request.GET.get('using_code')
     exam_id = request.GET.get('exam_id')
@@ -36,7 +35,29 @@ def send(request):
             final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
 
     if using_code == '1':
-        print(ident_code)
+
+        if exam_or_grades == '0':
+
+            if fzyz_or_jk == '1':
+                # 查询 fzyz_grades
+                data = get_fzyz_(ident_code)
+                username = data.username
+                passwd = data.passwd
+                final = fzyz_grades(username, passwd, exam_id)
+
+            if fzyz_or_jk == '2':
+                # 查询 jk
+                data = get_jk_(ident_code)
+                username = data.username
+                passwd = data.passwd
+                final = jk(username,passwd,subject)
+
+        if exam_or_grades == '1':
+            #查询 fzyz_exam
+            data = get_fzyz_(ident_code)
+            username = data.username
+            passwd = data.passwd
+            final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
 
     response = HttpResponse(final)
     response["Access-Control-Allow-Origin"] = "*"
