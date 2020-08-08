@@ -20,6 +20,7 @@ def send(request):
     subject = request.GET.getlist('subject')
 
     if using_code == '0':
+        #不使用 ident_code
 
         if exam_or_grades == '0':
 
@@ -32,32 +33,46 @@ def send(request):
                 final = jk(username,passwd,subject)
 
         if exam_or_grades == '1':
+            #查询 fzyz_exam
             final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
 
     if using_code == '1':
+        #使用 ident_code
 
         if exam_or_grades == '0':
 
             if fzyz_or_jk == '1':
                 # 查询 fzyz_grades
                 data = get_fzyz_(ident_code)
-                username = data.username
-                passwd = data.passwd
-                final = fzyz_grades(username, passwd, exam_id)
+                data_dict = data.to_dict()
+                if data.id == ident_code:
+                    username = data_dict['username']
+                    passwd = data_dict['passwd']
+                    final = fzyz_grades(username, passwd, exam_id)
+                else:
+                    pass
 
             if fzyz_or_jk == '2':
                 # 查询 jk
                 data = get_jk_(ident_code)
-                username = data.username
-                passwd = data.passwd
-                final = jk(username,passwd,subject)
+                data_dict = data.to_dict()
+                if data.id == ident_code:
+                    username = data_dict['username']
+                    passwd = data_dict['passwd']
+                    final = jk(username,passwd,subject)
+                else:
+                    pass
 
         if exam_or_grades == '1':
             #查询 fzyz_exam
             data = get_fzyz_(ident_code)
-            username = data.username
-            passwd = data.passwd
-            final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
+            data_dict = data.to_dict()
+            if data.id == ident_code:
+                username = data_dict['username']
+                passwd = data_dict['passwd']
+                final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
+            else:
+                pass
 
     response = HttpResponse(final)
     response["Access-Control-Allow-Origin"] = "*"

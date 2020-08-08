@@ -12,12 +12,12 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 def get_fzyz_(ident_code):
-    fzyz_ref = db.collection(u'fzyz').document(u'{}'.format(ident_code))
+    fzyz_ref = db.collection(u'fzyz')
     fzyz_docs = fzyz_ref.stream()
     return fzyz_docs
 
 def get_jk_(ident_code):
-    jk_ref = db.collection(u'jk').document(u'{}'.format(ident_code))
+    jk_ref = db.collection(u'jk')
     jk_docs = jk_ref.stream()
     return jk_docs
 

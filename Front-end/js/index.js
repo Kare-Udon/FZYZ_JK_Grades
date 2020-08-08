@@ -19,17 +19,17 @@ $(function () {
 	const form_s = $("#form");
 
 	var using_code = "0"
-	var api_url = "http://127.0.0.1:8000/main/" //于此修改API网址
+	var api_url = "https://python-test-amosv.run-us-west2.goorm.io/main/" //于此修改API网址
 
-	btn1_s.on("click", function () {
+//	btn1_s.on("click", function () {
 		
-		if( $("#username").val() == "" || $("#passwd").val() == "" ){
-			$("#warn-input-error").modal("show");
-			card2_s.fadeOut();
-		} else {
-			card2_s.fadeIn();
-		}
-	});
+//		if( $("#username").val() == "" || $("#passwd").val() == "" || $("#ident_code") == "" ) {
+//			$("#warn-input-error").modal("show");
+//			card2_s.fadeOut();
+//		} else {
+//			card2_s.fadeIn();
+//		}
+//	});
 
 	acc_switch1_s.on("click", function () {
 		input_form_s.fadeIn();
@@ -152,5 +152,5 @@ $(function () {
 		document.getElementById('year2').value = (year - 2) + '-' + (year - 1);
 		document.getElementById('year3').value = (year - 3) + '-' + (year - 2);
 	});
-
+	card2_s.fadeIn();
 });
