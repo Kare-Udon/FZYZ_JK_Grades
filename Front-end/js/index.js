@@ -19,7 +19,7 @@ $(function () {
 	const form_s = $("#form");
 
 	var using_code = "0"
-	var api_url = "https://python-test-amosv.run-us-west2.goorm.io/main/" //于此修改API网址
+	var api_url = "http://127.0.0.1:8000" //于此修改API网址
 
 //	btn1_s.on("click", function () {
 		
@@ -143,6 +143,7 @@ $(function () {
 	})
 
 	btn1_s.on("click", function () {
+		card2_s.fadeIn();
 		var date = new Date();
 		year = date.getFullYear();
 		document.getElementById('year1').innerHTML = (year - 1) + ' - ' + year;
@@ -152,5 +153,5 @@ $(function () {
 		document.getElementById('year2').value = (year - 2) + '-' + (year - 1);
 		document.getElementById('year3').value = (year - 3) + '-' + (year - 2);
 	});
-	card2_s.fadeIn();
+
 });

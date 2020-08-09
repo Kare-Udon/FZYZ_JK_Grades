@@ -44,33 +44,35 @@ def send(request):
             if fzyz_or_jk == '1':
                 # 查询 fzyz_grades
                 data = get_fzyz_()
-                data_dict = data.to_dict()
-                if data.id == ident_code:
-                    username = data_dict['username']
-                    passwd = data_dict['passwd']
-                    final = fzyz_grades(username, passwd, exam_id)
-                else:
-                    pass
+                for doc in data:
+                    if doc.id == ident_code:
+                        doc_dict = doc.to_dict()
+                        username = doc_dict['username']
+                        passwd = doc_dict['passwd']
+                        final = fzyz_grades(username, passwd, exam_id)
+                    else:
+                        pass
 
             if fzyz_or_jk == '2':
                 # 查询 jk
                 data = get_jk_()
-                data_dict = data.to_dict()
-                if data.id == ident_code:
-                    username = data_dict['username']
-                    passwd = data_dict['passwd']
-                    final = jk(username,passwd,subject)
-                else:
-                    pass
+                for doc in data:
+                    if data.id == ident_code:
+                        doc_dict = doc.to_dict()
+                        username = doc_dict['username']
+                        passwd = doc_dict['passwd']
+                        final = jk(username,passwd,subject)
+                    else:
+                        pass
 
         if exam_or_grades == '1':
             #查询 fzyz_exam
             data = get_fzyz_()
-            data_dict = data.to_dict()
-            for doc in data_dict:
+            for doc in data:
                 if doc.id == ident_code:
-                    username = doc['username']
-                    passwd = doc['passwd']
+                    doc_dict = doc.to_dict()
+                    username = doc_dict['username']
+                    passwd = doc_dict['passwd']
                     final = fzyz_exam(username, passwd, para_academic_Year, para_KEY)
                 else:
                     pass
